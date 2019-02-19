@@ -1,11 +1,10 @@
 package io.github.askmate.restService.controller;
 
 
-import io.github.askmate.restService.model.Question;
+
 import io.github.askmate.restService.model.QuestionDTO;
 import io.github.askmate.restService.service.QuestionService;
 import org.json.JSONArray;
-import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-
+import java.util.ArrayList;
 import java.util.List;
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -49,11 +46,19 @@ public class QuestionControllerTest {
     }
 
 
+
     private List<QuestionDTO> createTestData() {
         return List.of(
                 new QuestionDTO(1, "foo"),
                 new QuestionDTO(2, "bar")
         );
+
+//    List<QuestionDTO> tmp = new ArrayList<>();
+//
+//        tmp.add(new QuestionDTO(1, "foo"));
+//        tmp.add(new QuestionDTO(2, "bar"));
+//
+//        return tmp;
     }
-}
+    }
 
