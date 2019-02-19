@@ -15,11 +15,12 @@ import java.util.List;
 @RequestMapping(value = "/questions")
 public class QuestionController {
 
+
     private QuestionService questionService;
 
     @GetMapping
     public List<QuestionDTO> getAllQuestions(){
-        return null;
+     return questionService.getAllQuestion();
     }
 }
 
