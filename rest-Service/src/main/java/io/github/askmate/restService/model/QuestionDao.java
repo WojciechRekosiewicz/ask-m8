@@ -1,17 +1,17 @@
 package io.github.askmate.restService.model;
 
 
+import io.github.askmate.restService.service.QuestionService;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 @Service
 @Data
-public class QuestionDao {
+public class QuestionDao implements QuestionService {
 
     private static List<QuestionDTO> productRepo;
     static {
@@ -24,8 +24,8 @@ public class QuestionDao {
     }
 
 
-public List<QuestionDTO> getAllQuestions(){
-        return null;
-}
-
+    @Override
+    public List<QuestionDTO> getAllQuestion() {
+        return productRepo;
+    }
 }
